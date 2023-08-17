@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to the party!</h1>
+    <h1>Welcome to the Hotcat Technologies!</h1>
     <p>{{$name}}</p>
 </body>
 </html>

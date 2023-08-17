@@ -15,14 +15,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $startTime=new Carbon('2023-08-15 17:43:00');
-        $endTime=new Carbon('2023-08-15 17:45:01');
+        $startTime=new Carbon('2023-08-16 11:00:00');
+        $endTime=new Carbon('2023-08-16 12:00:01');
         $schedule->call(function()  {
-            Mail::to('janithishara971231@gmail.com')->send(new WeeklyReport("WELCOME Janith!"));
-        })->everySecond()->when(function() use($startTime,$endTime){
+            Mail::to('chamikararuchiranga1@gmail.com')->send(new WeeklyReport("WELCOME Chamikara Ruchiranga!"));
+        })->everyMinute()->when(function() use($startTime,$endTime){
             $now=Carbon::now();
-            $countTime=$now->diffInSeconds($startTime);
-            return $now->between($startTime,$endTime)&&($countTime%10)==0;
+            $countTime=$now->diffInMinutes($startTime);
+            return $now->between($startTime,$endTime)&&($countTime%20)==0;
         });
     }
 
